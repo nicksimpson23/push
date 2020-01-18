@@ -1,6 +1,6 @@
 const octokit = require('@octokit/rest');
 const fs = require('fs');
-const mkdir = require('mkdir');
+const mkdir = require('mkdirp');
 const Path = require('path');
 
 const username = "name of repo. owner";
@@ -11,7 +11,12 @@ const user = octokit({
 // writes files
 async function write(path, content) {
 	path = Path.resolve(__dirname, path);
-	await mkdir(path);
+
+	let directory = path.split('/');
+	directory.pop();
+	directory = directory.join('/');
+
+	await mkdir(directory);
 	fs.writeFile(path, content, (err) => {
 		if (err) throw Error(err);
 	});
