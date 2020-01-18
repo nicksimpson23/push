@@ -1,2 +1,2 @@
 # push
-Syncs github to file system
+Script to sync github to file system. Made for usage w/ linux VMs.
