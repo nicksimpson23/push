@@ -38,7 +38,7 @@ async function build(src, path="") {
 	};
 };
 
-async function init(src, interval=30000) {
+async function init(src, interval=300000) {
 	if (!src) throw Error("provide src");
 	build(src);
 	setInterval(() => {
@@ -46,4 +46,4 @@ async function init(src, interval=30000) {
 	}, interval);
 };
 
-module.exports = init;
+init("repository name", 300000);
