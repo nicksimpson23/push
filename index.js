@@ -6,7 +6,7 @@ const user = octokit({
 	auth: "personal access token"
 });
 
-// writes file
+// writes files
 function write(path, content) {
 	fs.writeFile(path, content, (err) => {
 		if (err) throw Error(err);
