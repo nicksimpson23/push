@@ -38,7 +38,7 @@ async function build(src, path="") {
 	};
 };
 
-async function init(src, interval=300000) {
+function init(src, interval=300000) {
 	if (!src) throw Error("provide src");
 	build(src);
 	setInterval(() => {
